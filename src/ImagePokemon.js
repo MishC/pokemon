@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 export default function ImagePokemon(props) {
-  //const apikey = "AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U";
   let [pokemonImg, setPokemonImg] = useState("");
 
   const findImage = (url) => {
