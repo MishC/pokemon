@@ -35,8 +35,10 @@ export default function SearchBar() {
           weight: data.weight / 10,
           type: data.types[0].type.name,
           id: data.id,
+        }).catch((error) => {
+          console.log(error);
         });
-        console.log(result.weight);
+        //console.log(result.weight);
         if (result.ready) {
           setUrl(
             `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U&q=${result.name}&searchType=image&imgSize=MEDIUM&imgColorType=color&num=1`

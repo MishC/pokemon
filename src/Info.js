@@ -12,6 +12,9 @@ export default function Info(props) {
 
       .then((data) => {
         setColor(data.color.name);
+      })
+      .catch((error) => {
+        console.log(error);
       });
     return (
       <div className="Info">
