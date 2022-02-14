@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function Info(props) {
-  //let [url, setUrl] = useState(" ");
   let [color, setColor] = useState(" ");
 
   if (props.ready) {
     let url = `https://pokeapi.co/api/v2/pokemon-species/${props.id}/`;
 
-    fetch(url)
-      .then((response) => response.json())
+    axios
+      .get(url)
+
       .then((data) => {
         setColor(data.color.name);
       });

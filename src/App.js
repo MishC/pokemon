@@ -1,3 +1,4 @@
+import React from "react";
 import SearchBar from "./SearchBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 

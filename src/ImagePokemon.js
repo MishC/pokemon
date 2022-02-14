@@ -1,25 +1,18 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function ImagePokemon(props) {
   let [pokemonImg, setPokemonImg] = useState("");
 
   const findImage = (url) => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        // console.log(data);
-        setPokemonImg(data.items[0].link);
-        //console.log(pokemonImg);
-      })
-      .catch((error) => {
-        console.log("stop!");
-      });
+    axios.get(url).then((data) => {
+      setPokemonImg(data.items[0].link);
+    });
   };
   if (props.url) {
-    setTimeout(findImage(props.url), 50);
-  } else {
-    return null;
+    findImage(props.url);
   }
+
   if (pokemonImg) {
     return (
       <div className="ImagePokemon">
@@ -27,6 +20,6 @@ export default function ImagePokemon(props) {
       </div>
     );
   } else {
-    return <div className="ImagePokemon"></div>;
+    return null;
   }
 }

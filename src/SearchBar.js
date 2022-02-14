@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import Info from "./Info";
 import ImagePokemon from "./ImagePokemon";
+import axios from "axios";
 
 export default function SearchBar() {
   let [keyword, setKeyword] = useState(null);
   let [url, setUrl] = useState("");
   let [result, setResult] = useState({
     ready: false,
-    name: "",
+    name: " ",
     height: null,
     weight: null,
-    type: "",
+    type: " ",
     id: null,
   });
-  //let [id, setId] = useState(null);
 
   function handleSearchWord(event) {
     event.preventDefault();
@@ -23,9 +23,11 @@ export default function SearchBar() {
   const search = (event) => {
     event.preventDefault();
     let apiUrl = `https://pokeapi.co/api/v2/pokemon/${keyword}`;
-    fetch(apiUrl)
-      .then((response) => response.json())
+    axios
+      .get(apiUrl)
+
       .then((data) => {
+        console.log(data);
         setResult({
           ready: true,
           name: data.forms[0].name,
@@ -34,20 +36,14 @@ export default function SearchBar() {
           type: data.types[0].type.name,
           id: data.id,
         });
-        console.log(data.id);
+        console.log(result.weight);
         if (result.ready) {
-          setTimeout(
-            setUrl(
-              `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U&q=${result.name}&searchType=image&imgSize=MEDIUM&imgColorType=color&num=1`
-            ),
-            40
+          setUrl(
+            `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U&q=${result.name}&searchType=image&imgSize=MEDIUM&imgColorType=color&num=1`
           );
         } else {
-          setTimeout(
-            setUrl(
-              `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U&q=${data.forms[0].name}&searchType=image&imgSize=MEDIUM&imgColorType=color&num=1`
-            ),
-            40
+          setUrl(
+            `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U&q=${keyword}&searchType=image&imgSize=MEDIUM&imgColorType=color&num=1`
           );
         }
       });
@@ -76,7 +72,7 @@ export default function SearchBar() {
         ready={result.ready}
         name={result.name}
         height={result.height}
-        weight={result.height}
+        weight={result.weight}
         type={result.type}
         id={result.id}
       />
