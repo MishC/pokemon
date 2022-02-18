@@ -1,36 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function ImagePokemon(props) {
-  let [pokemonImg, setPokemonImg] = useState("");
+  let [pokemon, setPokemon] = useState({ image: "", ready: false });
 
-  const findImage = (url) => {
-    axios
-      .get(url)
-      .then((data) => {
-        setPokemonImg(data.items[0].link);
-      })
-      .catch((error) => {
-        console.log(error);
-        return (
-          <div>
-            <h2>{error}</h2>
-            <h5> Sorry, no image this time</h5>
-          </div>
-        );
-      });
+  const haveProps = (name) => {
+    if (name.length >= 2) {
+      console.log(name);
+      let url = `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U&q=${name}&searchType=image&imgSize=MEDIUM&imgColorType=color&num=1`;
+      return url;
+    } else {
+      return null;
+    }
   };
-  if (props.url) {
-    findImage(props.url);
-  }
+  let url = haveProps(props.name);
+  //items[0].link;
+  useEffect(() => {
+    if (props.name.length >= 2) {
+      // console.log(props);
+      let url = `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U&q=${props.name}&searchType=image&imgSize=MEDIUM&imgColorType=color&num=1`;
+      try {
+        axios.get(url).then((response) => {
+          setPokemon({ image: response.data.items[0].link, state: true });
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }, [props.name, url]);
 
-  if (pokemonImg) {
+  if (pokemon.state === true) {
     return (
-      <div className="ImagePokemon">
-        <img src={pokemonImg} alt={props.name} className="img-fluid" />
+      <div className="ImagePokemon m-5 ">
+        <br />
+        <img src={pokemon.image} alt={props.name} className="img-fluid pb-4" />
       </div>
     );
   } else {
-    return null;
+    return <div className="ImagePokemon"></div>;
   }
 }
