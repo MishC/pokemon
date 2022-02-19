@@ -14,11 +14,8 @@ export default function ImagePokemon(props) {
     }
   };
   let url = haveProps(props.name);
-  //items[0].link;
   useEffect(() => {
     if (props.name.length >= 2) {
-      // console.log(props);
-      let url = `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U&q=${props.name}&searchType=image&imgSize=MEDIUM&imgColorType=color&num=1`;
       try {
         axios.get(url).then((response) => {
           setPokemon({ image: response.data.items[0].link, state: true });
