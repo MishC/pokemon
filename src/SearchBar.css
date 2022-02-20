@@ -1,6 +1,24 @@
 * {
   box-sizing: border-box;
 }
+body {
+  margin: 0;
+}
+/*body {
+  background-image: url("./images/01.jpg"), url("./images/02.jpg"),
+    url("./images/03.jpg");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-attachment: fixed, fixed, fixed;
+  background-position: top left, left top, right top;
+  background-size: 400px 250px, 400px 250px, 400px 250px;
+}*/
+.Search {
+  padding: 50px;
+  background-image: url("./images/01.jpg");
+  background-size: 100% 400px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 form {
   max-width: 300px;
   margin: 0 auto;
@@ -8,7 +26,7 @@ form {
 form.submitForm input[type="search"] {
   padding: 10px;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 3px solid #2196f3;
   float: left;
   width: 80%;
   background: #f1f1f1;
@@ -21,7 +39,7 @@ form.submitForm button {
   background: #2196f3;
   color: white;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 3px solid #2196f3;
   border-left: none;
   cursor: pointer;
 }
@@ -34,4 +52,8 @@ form.submitForm::after {
   content: "";
   clear: both;
   display: table;
+}
+.Content {
+  background-color: #ffffff;
+  padding: 20px;
 }

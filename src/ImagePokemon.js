@@ -30,7 +30,11 @@ export default function ImagePokemon(props) {
     return (
       <div className="ImagePokemon m-5 ">
         <br />
-        <img src={pokemon.image} alt={props.name} className="img-fluid pb-4" />
+        <img
+          src={pokemon.image}
+          alt={props.name}
+          className="img-fluid py-5 align-middle"
+        />
       </div>
     );
   } else {
