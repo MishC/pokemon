@@ -1,5 +1,9 @@
 .Info {
-  margin-top: 50px;
-  border: 2px dashed #ffffa7;
-  padding: 20px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 0px;
+}
+.line-break {
+  width: 100%;
+  height: 10px;
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Info from "./Info";
-import ImagePokemon from "./ImagePokemon";
+//import ImagePokemon from "./ImagePokemon";
 import "./SearchBar.css";
 import axios from "axios";
 
@@ -66,8 +66,7 @@ export default function SearchBar() {
         </form>
         <br /> <br />
       </div>
-      <div className="Content d-inline-flex align-middle border border-primary text-left">
-        <ImagePokemon name={result.name} />
+      <div className="Content align-middle  text-center">
         <Info
           ready={result.ready}
           name={result.name}

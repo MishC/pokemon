@@ -28,12 +28,12 @@ export default function ImagePokemon(props) {
 
   if (pokemon.state === true) {
     return (
-      <div className="ImagePokemon m-5 ">
+      <div className="ImagePokemon m-2 d-block text-center">
         <br />
         <img
           src={pokemon.image}
           alt={props.name}
-          className="img-fluid py-2 align-middle"
+          className="img-fluid py-2 px-3 align-middle"
         />
       </div>
     );
