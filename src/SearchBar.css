@@ -7,20 +7,17 @@ body {
 .SearchBar {
   text-align: center;
 }
-/*body {
-  background-image: url("./images/01.jpg"), url("./images/02.jpg"),
-    url("./images/03.jpg");
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-attachment: fixed, fixed, fixed;
-  background-position: top left, left top, right top;
-  background-size: 400px 250px, 400px 250px, 400px 250px;
-}*/
+
 .Search {
   padding: 50px;
-  background-image: url("./images/01.jpg");
-  background-size: 100% 400px;
-  max-width: 1000px;
+  /* background-image: url("./images/01.jpg");
+  background-size: 100% 400px;*/
+  max-width: auto;
+  max-height: auto;
   margin: 0 auto;
+  background-size: auto 400px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 form {
   max-width: 300px;
@@ -60,4 +57,10 @@ form.submitForm::after {
   background-color: #ffffff;
   padding: 0;
   margin: 0;
+}
+
+.mastfoot {
+  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  bottom: 0px;
 }

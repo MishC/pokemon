@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Info from "./Info";
-//import ImagePokemon from "./ImagePokemon";
 import "./SearchBar.css";
 import axios from "axios";
 
@@ -15,10 +14,30 @@ export default function SearchBar() {
     id: null,
   });
 
-  function handleSearchWord(event) {
+  let [styleImg, setStyleImg] = useState({
+    backgroundImage: " ",
+    width: "100%",
+    height: "300px",
+    backgroundSize: "cover",
+  });
+
+  const randomizeNumber = (lengthOfArr) => {
+    let num = Math.floor(Math.random() * (lengthOfArr - 1)) + 1;
+    if (num < 10) {
+      return "0" + num.toString();
+    } else {
+      return num.toString();
+    }
+  };
+
+  const addBgImg = {
+    backgroundImage: `url("./images/${randomizeNumber(20)}.jpg")`,
+  };
+  console.log(addBgImg);
+  const handleSearchWord = (event) => {
     event.preventDefault();
     setKeyword(event.target.value.toLowerCase());
-  }
+  };
 
   const search = (event) => {
     event.preventDefault();
@@ -33,12 +52,26 @@ export default function SearchBar() {
         type: result.data.types[0].type.name,
         id: result.data.id,
       });
+      setStyleImg({
+        backgroundImage: `url(${require("./images/" +
+          randomizeNumber(19) +
+          ".jpg")}
+      )`,
+      });
     });
   };
 
+  useEffect(() => {
+    setStyleImg({
+      backgroundImage: `url(${require("./images/" +
+        randomizeNumber(19) +
+        ".jpg")}
+      )`,
+    });
+  }, []);
   return (
     <div className="SearchBar">
-      <div className="Search">
+      <div className="Search" style={styleImg}>
         <form onSubmit={search} className="submitForm pt-5">
           <div className="inline pt-5 text-center">
             {/*<img
@@ -77,6 +110,13 @@ export default function SearchBar() {
         />
       </div>
       <br /> <br />
+      <footer className="mastfoot mt-auto">
+        <div className="inner">
+          <p>
+            January 2022 , by <a href="https://twitter.com/">mishc</a>.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -6,21 +6,26 @@ export default function InfoPlus(props) {
 
   if (props.abilities) {
     return (
-      <div className="InfoPlus text-left">
-        <h2 className="mt-5 mb-4 ">{props.name}'s Abilities</h2>
-        <ul>
+      <div className="InfoPlus text-center">
+        {/*This pokemon lives naturaly in {props.habitat}.*/}
+        <h2 className=" text-primary mt-5 mb-4 ">Abilities</h2>
+        <div>
           {props.abilities.map((ability, index) => {
             if (
               ability.language.name === "en" &&
               newItem !== ability.flavor_text
             ) {
               newItem = ability.flavor_text;
-              return <li key={index}>{ability.flavor_text}</li>;
+              return (
+                <div key={index} className="blur-box">
+                  {ability.flavor_text}
+                </div>
+              );
             } else {
               return null;
             }
           })}
-        </ul>
+        </div>
       </div>
     );
   } else {
