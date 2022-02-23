@@ -51,9 +51,12 @@ export default function Info(props) {
           }`,
         });
         if (response.data.evolves_from_species !== null) {
-          setEvolve(capitalizeFirst(response.data.evolves_from_species.name));
+          setEvolve(
+            "Evolves from:" +
+              capitalizeFirst(response.data.evolves_from_species.name)
+          );
         } else {
-          setEvolve("1st stage");
+          setEvolve("");
         }
       });
     } catch (error) {
@@ -78,7 +81,7 @@ export default function Info(props) {
                     <p className="font-weight-bold">
                       {} {state.genus}
                     </p>
-                    <p>Evolves from: {evolve}</p>
+                    <p> {evolve}</p>
                     <p>Type: {props.type}</p>
 
                     <p>Height: {props.height} cm</p>
