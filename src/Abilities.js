@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Abilities.css";
+import axios from "axios";
+
 export default function ImagePokemon(props) {
+  let [url, setUrl] = useState("");
+
+  const explain = (url) => {
+    axios.get(url).then((result) => {
+      console.log(result.data);
+    });
+  };
+
   if (props.abilities) {
     return (
       <div className="Abilities">
@@ -13,7 +23,13 @@ export default function ImagePokemon(props) {
             <h2>Abilities</h2>
             <br />
             {props.abilities.map((ability, index) => {
-              return <p key={index}>{ability.ability.name}</p>;
+              let url = ability.ability.url;
+
+              return (
+                <div>
+                  <p key={index}>{ability.ability.name} </p>
+                </div>
+              );
             })}
           </button>
         </div>
