@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ImagePokemon from "./ImagePokemon";
+import Abilities from "./Abilities";
 
 import InfoPlus from "./InfoPlus";
-import "./Info.css";
+import "./styles/Info.css";
 export default function Info(props) {
   let [state, setState] = useState({
     status: false,
@@ -93,6 +94,7 @@ export default function Info(props) {
               </div>
 
               <br />
+              <Abilities abilities={props.abilities} />
               <div className="line-break"></div>
               <div className="text-center">
                 <InfoPlus

@@ -1,5 +1,5 @@
 import React from "react";
-import "./InfoPlus.css";
+import "./styles/InfoPlus.css";
 
 export default function InfoPlus(props) {
   let newItem = 0;
@@ -8,7 +8,7 @@ export default function InfoPlus(props) {
     return (
       <div className="InfoPlus text-center">
         {/*This pokemon lives naturaly in {props.habitat}.*/}
-        <h2 className=" text-primary mt-5 mb-4 ">Abilities</h2>
+        <h2 className=" text-primary mt-5 mb-4 ">About</h2>
         <div>
           {props.abilities.map((ability, index) => {
             if (

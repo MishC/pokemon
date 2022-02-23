@@ -1,0 +1,18 @@
+.Abilities .btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+.Abilities .btn h2 {
+  color: #0d6efd;
+}
+/* On mouse-over */
+.Abilities .btn:hover {
+  background: #eee;
+  color: #0d6efd;
+}
+.Abilities .info {
+}

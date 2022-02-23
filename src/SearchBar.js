@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Info from "./Info";
-import "./SearchBar.css";
+import "./styles/SearchBar.css";
 import axios from "axios";
 
 export default function SearchBar() {
@@ -12,6 +12,7 @@ export default function SearchBar() {
     weight: null,
     type: " ",
     id: null,
+    abilities: [],
   });
 
   let [styleImg, setStyleImg] = useState({
@@ -30,10 +31,6 @@ export default function SearchBar() {
     }
   };
 
-  const addBgImg = {
-    backgroundImage: `url("./images/${randomizeNumber(20)}.jpg")`,
-  };
-  console.log(addBgImg);
   const handleSearchWord = (event) => {
     event.preventDefault();
     setKeyword(event.target.value.toLowerCase());
@@ -43,7 +40,7 @@ export default function SearchBar() {
     event.preventDefault();
     let apiUrl = `https://pokeapi.co/api/v2/pokemon/${keyword}`;
     axios.get(apiUrl).then((result) => {
-      // console.log(result.data);
+      console.log(result.data.held_items);
       setResult({
         ready: true,
         name: result.data.forms[0].name,
@@ -51,6 +48,7 @@ export default function SearchBar() {
         weight: result.data.weight / 10,
         type: result.data.types[0].type.name,
         id: result.data.id,
+        abilities: result.data.abilities,
       });
       setStyleImg({
         backgroundImage: `url(${require("./images/" +
@@ -107,6 +105,7 @@ export default function SearchBar() {
           weight={result.weight}
           type={result.type}
           id={result.id}
+          abilities={result.abilities}
         />
       </div>
       <br /> <br />

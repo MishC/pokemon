@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./ImagePokemon.css";
+import "./styles/ImagePokemon.css";
 
 export default function ImagePokemon(props) {
   let [pokemon, setPokemon] = useState({ image: "", ready: false });
 
   const haveProps = (name) => {
     if (name.length >= 2) {
-      console.log(name);
       let url = `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U&q=${name}&searchType=image&imgColorType=color&num=1`;
       return url;
     } else {
