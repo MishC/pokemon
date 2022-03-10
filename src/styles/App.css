@@ -18,11 +18,9 @@ body {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Desc_off {
+  display: none;
+}
+.Desc_on {
+  display: inline;
 }
