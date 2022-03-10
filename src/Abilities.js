@@ -1,15 +1,37 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Abilities.css";
 import axios from "axios";
+//import Explanation from "./Explanation";
 
-export default function ImagePokemon(props) {
+export default function Abilities(props) {
   let [url, setUrl] = useState("");
+  let [explain, setExplain] = useState([]);
 
-  const explain = (url) => {
-    axios.get(url).then((result) => {
-      console.log(result.data);
-    });
+  const hiddenContent = (Desc) => {
+    Desc.className === "Desc_off"
+      ? (Desc.className = "Desc_on")
+      : (Desc.className = "Desc_off");
   };
+
+  useEffect(() => {
+    console.log(url);
+
+    try {
+      axios.get(url).then((result) => {
+        //console.log(result.data.effect_entries);
+        result.data.effect_entries.forEach((entry) => {
+          if (entry.language.name === "en") {
+            setExplain(entry.effect);
+            console.log(explain);
+          } else {
+            return null;
+          }
+        });
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, [url]);
 
   if (props.abilities) {
     return (
@@ -23,11 +45,23 @@ export default function ImagePokemon(props) {
             <h2>Abilities</h2>
             <br />
             {props.abilities.map((ability, index) => {
-              let url = ability.ability.url;
+              // let url = ability.ability.url;
 
               return (
                 <div>
-                  <p key={index}>{ability.ability.name} </p>
+                  <p
+                    key={index}
+                    onClick={() => {
+                      setUrl(ability.ability.url);
+                      hiddenContent(Desc);
+                    }}
+                  >
+                    {ability.ability.name}
+                  </p>
+                  <span key="Desc" className="Desc_off">
+                    {" "}
+                    {explain}{" "}
+                  </span>
                 </div>
               );
             })}
