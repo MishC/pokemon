@@ -1,3 +1,5 @@
+#This is Pokemon API, write a name of the pokemon in the Search bar and you will get the info and picture about it from these webapi services:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
