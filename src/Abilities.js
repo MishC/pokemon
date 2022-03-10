@@ -53,7 +53,7 @@ export default function Abilities(props) {
                     key={index}
                     onClick={() => {
                       setUrl(ability.ability.url);
-                      hiddenContent(Desc);
+                      hiddenContent();
                     }}
                   >
                     {ability.ability.name}

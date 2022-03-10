@@ -16,7 +16,7 @@ const hiddenContent = (Desc) => {
 
        return (
          <div>
-           <p key={index} onClick={hiddenContent(span) }>
+           <p key={index} onClick={hiddenContent() }>
              {ability.ability.name}
            </p>
            <span  className="Desc_off" > </span>
