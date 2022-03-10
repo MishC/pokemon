@@ -1,5 +1,5 @@
-#This is Pokemon API, write a name of the pokemon in the Search bar and you will get the info and picture about it from these webapi services:
-i) https://pokeapi.co/api/v2/pokemon/
+#This is Pokemon API, write a name of the pokemon in the Search bar and you will get the info and picture about it from these webapi services:\
+i) https://pokeapi.co/api/v2/pokemon/ \
 ii) Google search Image
 
 # Getting Started with Create React App
