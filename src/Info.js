@@ -78,7 +78,7 @@ export default function Info(props) {
                 <div className="d-block text-left w-100 pt-4 mt-3 pr-5 mr-5">
                   <h2 className="text-primary">{name}</h2>
                   <br />
-                  <div className="">
+                  <div className="fs-5">
                     <p className="font-weight-bold">
                       {} {state.genus}
                     </p>

@@ -6,7 +6,11 @@
   background: white;
   margin: 10px auto 0 auto;
   padding: 40px 100px 60px;
-  width: 85%;
+  width: 75%;
+}
+.InfoPlus h2 {
+  text-align: left;
+  margin-left: 18%;
 }
 @media only screen and (max-width: 500px) {
   .blur-box {

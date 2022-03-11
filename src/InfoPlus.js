@@ -6,10 +6,10 @@ export default function InfoPlus(props) {
 
   if (props.abilities) {
     return (
-      <div className="InfoPlus text-center">
+      <div className="InfoPlus">
         {/*This pokemon lives naturaly in {props.habitat}.*/}
-        <h2 className=" text-primary mt-5 mb-4 ">About</h2>
-        <div>
+        <h2 className=" text-primary text-left ">About</h2>
+        <div className="text-center">
           {props.abilities.map((ability, index) => {
             if (
               ability.language.name === "en" &&

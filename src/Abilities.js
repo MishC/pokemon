@@ -7,11 +7,11 @@ export default function Abilities(props) {
   let [url, setUrl] = useState("");
   let [explain, setExplain] = useState([]);
 
-  const hiddenContent = (Desc) => {
+  /*const hiddenContent = (Desc) => {
     Desc.className === "Desc_off"
       ? (Desc.className = "Desc_on")
       : (Desc.className = "Desc_off");
-  };
+  };*/
 
   useEffect(() => {
     console.log(url);
@@ -31,42 +31,39 @@ export default function Abilities(props) {
     } catch (error) {
       console.log(error);
     }
-  }, [url]);
+  }, [url, explain]);
 
   if (props.abilities) {
     return (
       <div className="Abilities">
-        <div className="d-sm-inline-flex justify-content-between">
-          {/* <button class="btn info m-4 ">
+        {/* <button class="btn info m-4 ">
             <h2>Moves</h2>
             
     </button>{" "}*/}
-          <button class="btn info m-4">
-            <h2>Abilities</h2>
-            <br />
-            {props.abilities.map((ability, index) => {
-              // let url = ability.ability.url;
 
-              return (
-                <div>
-                  <p
-                    key={index}
-                    onClick={() => {
-                      setUrl(ability.ability.url);
-                      hiddenContent();
-                    }}
-                  >
-                    {ability.ability.name}
-                  </p>
-                  <span key="Desc" className="Desc_off">
-                    {" "}
-                    {explain}{" "}
-                  </span>
-                </div>
-              );
-            })}
-          </button>
-        </div>
+        <h2 className="text-primary">Abilities</h2>
+        {props.abilities.map((ability, index) => {
+          // let url = ability.ability.url;
+
+          return (
+            <div className="d-inline-flex justify-content-start">
+              <p
+                key={index}
+                className="item p-4 mt-0 fs-4"
+                onClick={() => {
+                  setUrl(ability.ability.url);
+                  //hiddenContent();
+                }}
+              >
+                {`${ability.ability.name}      `}{" "}
+              </p>
+              <span key="Desc" className="Desc_off">
+                {" "}
+                {explain}{" "}
+              </span>
+            </div>
+          );
+        })}
       </div>
     );
   } else {
