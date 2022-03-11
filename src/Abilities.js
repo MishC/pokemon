@@ -35,18 +35,18 @@ export default function Abilities(props) {
 
   if (props.abilities) {
     return (
-      <div className="Abilities">
+      <div className="Abilities bg-white  pt-5 w-75 ">
         {/* <button class="btn info m-4 ">
             <h2>Moves</h2>
             
     </button>{" "}*/}
 
-        <h2 className="text-primary mb-2">Abilities</h2>
+        <h2 className="text-primary mb-2 ">Abilities</h2>
         {props.abilities.map((ability, index) => {
           // let url = ability.ability.url;
 
           return (
-            <div className="d-inline-flex justify-content-start">
+            <div className="d-inline-flex mb-5 ">
               <p
                 key={index}
                 className="item p-4 mt-0 fs-5"

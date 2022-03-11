@@ -1,9 +1,7 @@
 .Abilities {
   border: none;
-  background-color: inherit;
   cursor: pointer;
-  margin: 0;
-  justify-content: left;
+  margin: 0 auto;
 }
 
 /* On mouse-over */

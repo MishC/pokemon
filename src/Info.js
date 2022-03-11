@@ -67,46 +67,36 @@ export default function Info(props) {
 
   if (state.status) {
     return (
-      <div className="Info">
-        <div className="container ">
-          <div className="row">
-            <div className="col-md-2 bg-primary p-0 m-0 w-10"></div>
+      <div className="Info bg-secondary ">
+        <div className="d-md-inline-flex bg-white  border border-secondary py-4 px-5 info-api w-75 mb-5 rounded">
+          <ImagePokemon name={name} />
+          <div className="d-block text-left w-100 pt-4 mt-3 pr-5 mr-5">
+            <h2 className="text-primary">{name}</h2>
+            <br />
+            <div className="fs-5">
+              <p className="font-weight-bold">
+                {} {state.genus}
+              </p>
+              <p> {evolve}</p>
+              <p>Type: {props.type}</p>
 
-            <div className=" p-0 m-0 ">
-              <div className="col-md-8 d-md-inline-flex bg-white   border border-primary py-4 px-5 info-api w-80 ">
-                <ImagePokemon name={name} />
-                <div className="d-block text-left w-100 pt-4 mt-3 pr-5 mr-5">
-                  <h2 className="text-primary">{name}</h2>
-                  <br />
-                  <div className="fs-5">
-                    <p className="font-weight-bold">
-                      {} {state.genus}
-                    </p>
-                    <p> {evolve}</p>
-                    <p>Type: {props.type}</p>
-
-                    <p>Height: {props.height} cm</p>
-                    <p>Weiht: {props.weight} kg</p>
-                    <p>Color: {state.color}</p>
-                    <div />
-                  </div>
-                </div>
-              </div>
-
-              <br />
-              <Abilities abilities={props.abilities} />
-              <div className="line-break"></div>
-              <div className="text-center">
-                <InfoPlus
-                  name={name}
-                  habitat={state.habitat}
-                  abilities={state.abilities}
-                  className="d-block"
-                />
-              </div>
+              <p>Height: {props.height} cm</p>
+              <p>Weiht: {props.weight} kg</p>
+              <p>Color: {state.color}</p>
+              <div />
             </div>
-            <div className="col-md-2 bg-primary p-0 m-0 w-10"></div>
           </div>
+        </div>
+        <br />
+        <Abilities abilities={props.abilities} />
+        <div className="line-break"></div>
+        <div className="text-center">
+          <InfoPlus
+            name={name}
+            habitat={state.habitat}
+            abilities={state.abilities}
+            className="d-block"
+          />
         </div>
       </div>
     );

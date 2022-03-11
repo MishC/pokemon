@@ -1,12 +1,17 @@
 .InfoPlus {
+  background: white;
+  margin: 20px auto;
 }
 .blur-box {
   box-shadow: 0 30px 50px rgb(65 50 100 / 10%);
   border-radius: 8px;
-  background: white;
+  background: gainsboro;
   margin: 10px auto 0 auto;
   padding: 40px 100px 60px;
   width: 75%;
+}
+.blur-box:hover {
+  background: white;
 }
 .InfoPlus h2 {
   text-align: left;
