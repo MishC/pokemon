@@ -1,7 +1,11 @@
 .App {
+  text-align: center;
+  margin: 0 auto;
 }
 body {
   background: --bs-gray-200;
+  text-align: center;
+  margin: 0 auto;
 }
 .App-header {
   background-color: #282c34;

@@ -70,10 +70,10 @@ export default function Info(props) {
       <div className="Info">
         <div className="container ">
           <div className="row">
-            <div className="col-md-2 bg-primary p-0 m-0"></div>
+            <div className="col-md-2 bg-primary p-0 m-0 w-10"></div>
 
             <div className=" p-0 m-0 ">
-              <div className="col-md-8 d-md-inline-flex bg-white   border border-primary py-4 px-5 info-api">
+              <div className="col-md-8 d-md-inline-flex bg-white   border border-primary py-4 px-5 info-api w-80 ">
                 <ImagePokemon name={name} />
                 <div className="d-block text-left w-100 pt-4 mt-3 pr-5 mr-5">
                   <h2 className="text-primary">{name}</h2>
@@ -105,7 +105,7 @@ export default function Info(props) {
                 />
               </div>
             </div>
-            <div className="col-md-2   bg-primary p-0 m-0"></div>
+            <div className="col-md-2 bg-primary p-0 m-0 w-10"></div>
           </div>
         </div>
       </div>

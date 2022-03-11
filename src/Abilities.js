@@ -41,7 +41,7 @@ export default function Abilities(props) {
             
     </button>{" "}*/}
 
-        <h2 className="text-primary">Abilities</h2>
+        <h2 className="text-primary mb-2">Abilities</h2>
         {props.abilities.map((ability, index) => {
           // let url = ability.ability.url;
 
@@ -49,7 +49,7 @@ export default function Abilities(props) {
             <div className="d-inline-flex justify-content-start">
               <p
                 key={index}
-                className="item p-4 mt-0 fs-4"
+                className="item p-4 mt-0 fs-5"
                 onClick={() => {
                   setUrl(ability.ability.url);
                   //hiddenContent();
