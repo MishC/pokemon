@@ -41,7 +41,7 @@ export default function Abilities(props) {
             
     </button>{" "}*/}
 
-        <h2 className="text-primary mb-2 ">Abilities</h2>
+        <h2 className="mb-2 ">Abilities</h2>
         {props.abilities.map((ability, index) => {
           // let url = ability.ability.url;
 

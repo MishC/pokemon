@@ -29,3 +29,7 @@ body {
 .Desc_on {
   display: inline;
 }
+
+h2 {
+  color: #198754;
+}

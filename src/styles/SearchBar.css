@@ -9,7 +9,7 @@ body {
 }
 
 .Search {
-  padding: 100px;
+  padding: 80px;
   /* background-image: url("./images/01.jpg");
   background-size: 100% 400px;*/
   max-width: auto;
@@ -26,7 +26,7 @@ form {
 form.submitForm input[type="search"] {
   padding: 10px;
   font-size: 17px;
-  border: 3px solid #2196f3;
+  border: 3px solid #198754;
   float: left;
   width: 80%;
   background: #f1f1f1;
@@ -36,10 +36,10 @@ form.submitForm button {
   float: left;
   width: 20%;
   padding: 10px;
-  background: #2196f3;
+  background: #198754;
   color: white;
   font-size: 17px;
-  border: 3px solid #2196f3;
+  border: 3px solid #198754;
   border-left: none;
   cursor: pointer;
 }
@@ -63,4 +63,10 @@ form.submitForm::after {
   /*background-color: var(--secondary);*/
   position: relative;
   bottom: 0px;
+}
+@media only screen and (max-width: 500px) {
+  .Search {
+    padding: 30px;
+    margin-bottom: 0;
+  }
 }

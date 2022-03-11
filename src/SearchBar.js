@@ -89,7 +89,7 @@ export default function SearchBar() {
             <button
               type="submit"
               value="Search"
-              className="btn btn-primary btn-rounded shadow-sm "
+              className="btn btn-success btn-rounded shadow-sm "
             >
               <i className="fa fa-search"></i>
             </button>
