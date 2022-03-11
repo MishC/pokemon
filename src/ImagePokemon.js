@@ -7,7 +7,7 @@ export default function ImagePokemon(props) {
 
   const haveProps = (name) => {
     if (name.length >= 2) {
-      let url = `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=AIzaSyA6hciKw_KeEYHT_WQRcda4I168vKNAM7U&q=${name}&searchType=image&imgColorType=color&num=1`;
+      let url = `https://www.googleapis.com/customsearch/v1?cx=c45ec48da5a6f409f&key=${HERE_ADD_YOUR_API_KEY}=${name}&searchType=image&imgColorType=color&num=1`;
       return url;
     } else {
       return null;
