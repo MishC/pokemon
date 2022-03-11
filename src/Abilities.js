@@ -35,7 +35,7 @@ export default function Abilities(props) {
 
   if (props.abilities) {
     return (
-      <div className="Abilities bg-white  pt-5 w-75 ">
+      <div className="Abilities bg-white  pt-5 w-80 rounded ">
         {/* <button class="btn info m-4 ">
             <h2>Moves</h2>
             

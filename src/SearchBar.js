@@ -110,7 +110,7 @@ export default function SearchBar() {
       </div>
       <br /> <br />
       <footer className="mastfoot mt-auto">
-        <div className="inner bg-secondary text-white">
+        <div className="inner bg-success text-white fs-6">
           <p>
             January 2022 , by{" "}
             <a

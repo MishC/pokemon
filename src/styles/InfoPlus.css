@@ -5,10 +5,10 @@
 .blur-box {
   box-shadow: 0 30px 50px rgb(65 50 100 / 10%);
   border-radius: 8px;
-  background: gainsboro;
-  margin: 10px auto 0 auto;
+  background: rgb(192, 248, 192);
+  margin: 10px auto 2px auto;
   padding: 40px 100px 60px;
-  width: 75%;
+  min-width: 25%;
 }
 .blur-box:hover {
   background: white;
@@ -16,6 +16,11 @@
 .InfoPlus h2 {
   text-align: left;
   margin-left: 18%;
+}
+.row {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
 }
 @media only screen and (max-width: 500px) {
   .blur-box {
