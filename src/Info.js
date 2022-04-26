@@ -67,12 +67,13 @@ export default function Info(props) {
 
   if (state.status) {
     return (
-      <div className="Info bg-success ">
-        <div className="d-md-inline-flex bg-white  border border-secondary py-4 px-5 info-api w-80 mb-5 rounded">
+      <div className="Info  ">
+        <div className="d-md-inline-flex bg-white  py-5 px-5 info-api w-80 mt-5 mb-0 ">
+          <h2>{name}</h2>
+
           <ImagePokemon name={name} />
           <div className="d-block text-left w-100 pt-4 mt-3 pr-5 mr-5">
-            <h2 className="text-left">{name}</h2>
-            <br />
+            <br /> <br />
             <div className="fs-5">
               <p className="font-weight-bold">
                 {} {state.genus}
@@ -87,9 +88,7 @@ export default function Info(props) {
             </div>
           </div>
         </div>
-        <br />
         <Abilities abilities={props.abilities} />
-        <div className="line-break"></div>
         <div className="text-center">
           <InfoPlus
             name={name}

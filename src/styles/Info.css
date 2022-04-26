@@ -1,5 +1,5 @@
 .Info {
-  margin: 70px auto;
+  margin: 0px 0 auto;
   text-align: center;
   padding: 0px;
   word-wrap: break-word;
@@ -17,4 +17,8 @@
 }
 .info-api {
   margin: 50px auto;
+}
+
+.Info h2 {
+  margin-left: 3%;
 }

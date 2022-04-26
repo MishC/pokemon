@@ -97,7 +97,7 @@ export default function SearchBar() {
         </form>
         <br /> <br />
       </div>
-      <div className="Content align-middle  text-center">
+      <div className="Content align-middle  text-center mb-1">
         <Info
           ready={result.ready}
           name={result.name}
