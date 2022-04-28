@@ -10,9 +10,7 @@
   width: 100%;
   height: 10px;
 }
-.Content {
-  margin: 0 auto;
-}
+
 .content {
 }
 .info-api {
@@ -20,4 +18,7 @@
 }
 .general-info {
   text-align: left;
+}
+h2 {
+  margin-left: -10px;
 }

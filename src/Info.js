@@ -67,11 +67,9 @@ export default function Info(props) {
   if (state.status) {
     return (
       <div className="Info mt-5 p-0">
-        <div className="container bg-white p-4">
+        <div className="container bg-white p-5">
           <div className="row align-items-start">
-            <h2 className=" col-sm-3 text-left mt-5 ml-5 align-self-start">
-              {name}
-            </h2>
+            <h2 className="col-sm-3 text-left mt-1 align-self-start">{name}</h2>
           </div>
           <div className="row align-items-center">
             <div className="col-sm-2"></div>
@@ -95,13 +93,14 @@ export default function Info(props) {
             </div>
           </div>
         </div>
-        <Abilities abilities={props.abilities} />
+        <div className="text-center">
+          <Abilities abilities={props.abilities} />
+        </div>
         <div className="text-center">
           <InfoPlus
             name={name}
             habitat={state.habitat}
             abilities={state.abilities}
-            className="d-block"
           />
         </div>
       </div>

@@ -35,13 +35,13 @@ export default function Abilities(props) {
 
   if (props.abilities) {
     return (
-      <div className="Abilities bg-white  pt-5 w-80 m-0  border-top border-secondary">
+      <div className="Abilities bg-white pl-5 pt-5  border-top border-secondary">
         {/* <button class="btn info m-4 ">
             <h2>Moves</h2>
             
     </button>{" "}*/}
 
-        <h2 className="mb-2 ">Abilities</h2>
+        <h2 className="mb-2 ml-5  pl-5 text-left">Abilities</h2>
         {props.abilities.map((ability, index) => {
           // let url = ability.ability.url;
 
