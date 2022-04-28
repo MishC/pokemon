@@ -1,9 +1,9 @@
 .Info {
   margin: 0px 0 auto;
-  text-align: center;
-  padding: 0px;
   word-wrap: break-word;
   min-width: 100%;
+  text-align: left;
+  padding-left: 1em;
 }
 
 .line-break {
@@ -18,7 +18,6 @@
 .info-api {
   margin: 50px auto;
 }
-
-.Info h2 {
-  margin-left: 3%;
+.general-info {
+  text-align: left;
 }

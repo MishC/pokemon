@@ -33,7 +33,7 @@ export default function ImagePokemon(props) {
         <img
           src={pokemon.image}
           alt={props.name}
-          className="img-fluid text-center align-middle"
+          className="img-fluid text-center align-middle pr-3"
         />
       </div>
     );

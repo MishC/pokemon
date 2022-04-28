@@ -1,7 +1,7 @@
 .Abilities {
-  border: none;
   cursor: pointer;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* On mouse-over */
@@ -11,5 +11,5 @@
 }
 .Abilities h2 {
   text-align: left;
-  margin-left: 3%;
+  margin-left: 50px;
 }

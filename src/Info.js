@@ -53,8 +53,7 @@ export default function Info(props) {
         });
         if (response.data.evolves_from_species !== null) {
           setEvolve(
-            "Evolves from:" +
-              capitalizeFirst(response.data.evolves_from_species.name)
+            "From:" + capitalizeFirst(response.data.evolves_from_species.name)
           );
         } else {
           setEvolve("");
@@ -67,24 +66,32 @@ export default function Info(props) {
 
   if (state.status) {
     return (
-      <div className="Info  ">
-        <div className="d-md-inline-flex bg-white  py-5 px-5 info-api w-80 mt-5 mb-0 ">
-          <h2>{name}</h2>
+      <div className="Info mt-5 p-0">
+        <div className="container bg-white p-4">
+          <div className="row align-items-start">
+            <h2 className=" col-sm-3 text-left mt-5 ml-5 align-self-start">
+              {name}
+            </h2>
+          </div>
+          <div className="row align-items-center">
+            <div className="col-sm-2"></div>
 
-          <ImagePokemon name={name} />
-          <div className="d-block text-left w-100 pt-4 mt-3 pr-5 mr-5">
-            <br /> <br />
-            <div className="fs-5">
-              <p className="font-weight-bold">
-                {} {state.genus}
-              </p>
-              <p> {evolve}</p>
-              <p>Type: {props.type}</p>
+            <div className="col-sm-4">
+              <ImagePokemon name={name} />
+            </div>
+            <div className="col-sm-4 align-self-left text-left mt-0 pt-2 ">
+              <br /> <br />
+              <div className="fs-5 text-left">
+                <p className=" fs-4 font-weight-bold pl-5 text-success ">
+                  {} {state.genus}
+                </p>
+                <p> {evolve}</p>
+                <p>Type: {props.type}</p>
 
-              <p>Height: {props.height} cm</p>
-              <p>Weiht: {props.weight} kg</p>
-              <p>Color: {state.color}</p>
-              <div />
+                <p>Height: {props.height} cm</p>
+                <p>Weiht: {props.weight} kg</p>
+                <p>Color: {state.color}</p>
+              </div>
             </div>
           </div>
         </div>
