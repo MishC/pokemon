@@ -22,7 +22,7 @@ export default function Abilities(props) {
         result.data.effect_entries.forEach((entry) => {
           if (entry.language.name === "en") {
             setExplain(entry.effect);
-            console.log(explain);
+            //console.log(explain);
           } else {
             return null;
           }
@@ -36,7 +36,7 @@ export default function Abilities(props) {
   if (props.abilities) {
     return (
       <div className="Abilities bg-white pl-5 pt-5  border-top border-secondary">
-        {/* <button class="btn info m-4 ">
+        {/* <button className="btn info m-4 ">
             <h2>Moves</h2>
             
     </button>{" "}*/}
