@@ -41,7 +41,6 @@ export default function Info(props) {
   useEffect(() => {
     try {
       axios.get(url).then((response) => {
-        console.log(response);
         setState({
           status: true,
           color: response.data.color.name,
@@ -69,7 +68,9 @@ export default function Info(props) {
       <div className="Info mt-5 p-0">
         <div className="container bg-white p-5">
           <div className="row align-items-start">
-            <h2 className="col-sm-3 text-left mt-1 align-self-start">{name}</h2>
+            <h2 className="col-sm-3 text-left mt-1 align-self-start text-nowrap">
+              {name}
+            </h2>
           </div>
           <div className="row align-items-center">
             <div className="col-sm-2"></div>

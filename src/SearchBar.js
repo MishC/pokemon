@@ -40,7 +40,6 @@ export default function SearchBar() {
     event.preventDefault();
     let apiUrl = `https://pokeapi.co/api/v2/pokemon/${keyword}`;
     axios.get(apiUrl).then((result) => {
-      console.log(result.data.held_items);
       setResult({
         ready: true,
         name: result.data.forms[0].name,
