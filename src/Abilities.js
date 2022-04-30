@@ -6,12 +6,9 @@ import axios from "axios";
 export default function Abilities(props) {
   let [url, setUrl] = useState("");
   let [explain, setExplain] = useState([]);
-
-  /*const hiddenContent = (Desc) => {
-    Desc.className === "Desc_off"
-      ? (Desc.className = "Desc_on")
-      : (Desc.className = "Desc_off");
-  };*/
+  let [route, setRoute] = useState("");
+  let [style, setStyle] = useState("item p-4 mt-0 fs-5");
+  let [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     console.log(url);
@@ -22,7 +19,7 @@ export default function Abilities(props) {
         result.data.effect_entries.forEach((entry) => {
           if (entry.language.name === "en") {
             setExplain(entry.effect);
-            //console.log(explain);
+            setRoute("explain");
           } else {
             return null;
           }
@@ -35,7 +32,7 @@ export default function Abilities(props) {
 
   if (props.abilities) {
     return (
-      <div className="Abilities bg-white pl-5 pt-5  border-top border-secondary">
+      <div className="Abilities bg-white px-5 py-5  border-top border-secondary">
         {/* <button className="btn info m-4 ">
             <h2>Moves</h2>
             
@@ -43,27 +40,30 @@ export default function Abilities(props) {
 
         <h2 className="mb-2 ml-5  pl-5 text-left">Abilities</h2>
         {props.abilities.map((ability, index) => {
-          // let url = ability.ability.url;
-
           return (
-            <div className="d-inline-flex mb-5 px-5 ">
+            <div className="d-inline-flex mb-1 px-5 ">
               <p
                 key={index}
-                className="item p-4 mt-0 fs-5"
+                className={style}
                 onClick={() => {
                   setUrl(ability.ability.url);
-                  //hiddenContent();
+                  if (setIsClicked(false)) {
+                    setStyle("item p-4 mt-0 fs-5");
+                    setIsClicked(true);
+                  } else {
+                    setStyle("text-underline fs-5");
+                    setIsClicked(false);
+                  }
                 }}
               >
                 {`${ability.ability.name}      `}{" "}
               </p>
-              <span key="Desc" className="Desc_off">
-                {" "}
-                {explain}{" "}
-              </span>
             </div>
           );
         })}
+        <div className="fs-5">
+          {route === "explain" ? <span>{explain}</span> : <div> {}</div>}
+        </div>
       </div>
     );
   } else {

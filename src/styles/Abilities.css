@@ -4,10 +4,16 @@
 }
 
 /* On mouse-over */
-.item:hover {
+.item:hover,
+.item:active {
   background: #eee;
   color: #0d6efd;
 }
+
+.item-0 {
+  text-decoration: underline;
+}
+
 .Abilities h2 {
   text-align: left;
   margin-left: 2em;
