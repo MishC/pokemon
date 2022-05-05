@@ -21,7 +21,6 @@ export default function Abilities(props) {
             setExplain(entry.effect);
             setRoute("explain");
           } else {
-            return null;
           }
         });
       });

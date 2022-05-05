@@ -13,8 +13,8 @@ export default function Info(props) {
     abilities: [],
 
     habitat: "",
-    evolve: "",
   });
+  let [evolve, setEvolve] = useState("");
 
   const capitalizeFirst = (word) => {
     const word2 = word.charAt(0).toUpperCase() + word.slice(1);
@@ -51,13 +51,11 @@ export default function Info(props) {
           }`,
         });
         if (response.data.evolves_from_species !== null) {
-          setState({
-            evolve:
-              "From:" +
-              capitalizeFirst(response.data.evolves_from_species.name),
-          });
+          setEvolve(
+            "From:" + capitalizeFirst(response.data.evolves_from_species.name)
+          );
         } else {
-          setState({ evolve: "" });
+          setEvolve("");
         }
       });
     } catch (error) {
@@ -86,7 +84,7 @@ export default function Info(props) {
                 <p className=" fs-4 font-weight-bold pl-5 text-success ">
                   {} {state.genus}
                 </p>
-                <p> {state.evolve}</p>
+                <p> {evolve}</p>
                 <p>Type: {props.type}</p>
 
                 <p>Height: {props.height} cm</p>
