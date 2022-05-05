@@ -94,8 +94,16 @@ export default function Info(props) {
             </div>
           </div>
         </div>
-        <div className="text-center">
-          <Abilities abilities={props.abilities} />
+        <div className="Abilities bg-white px-5 py-5  border-top border-secondary">
+          {/* <button className="btn info m-4 ">
+            <h2>Moves</h2>
+            
+    </button>{" "}*/}
+
+          <h2 className="mb-2 ml-5  pl-5 text-left">Abilities</h2>
+          {props.abilities.map((ability, index) => {
+            return <Abilities ability={ability.ability} index={index} />;
+          })}
         </div>
         <div className="text-center">
           <InfoPlus

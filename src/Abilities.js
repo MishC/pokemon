@@ -29,37 +29,27 @@ export default function Abilities(props) {
     }
   }, [url, explain]);
 
-  if (props.abilities) {
+  if (props.ability) {
     return (
-      <div className="Abilities bg-white px-5 py-5  border-top border-secondary">
-        {/* <button className="btn info m-4 ">
-            <h2>Moves</h2>
-            
-    </button>{" "}*/}
-
-        <h2 className="mb-2 ml-5  pl-5 text-left">Abilities</h2>
-        {props.abilities.map((ability, index) => {
-          return (
-            <div className="d-inline-flex mb-1 px-5 ">
-              <p
-                key={index}
-                className={style}
-                onClick={() => {
-                  setUrl(ability.ability.url);
-                  if (isClicked === false) {
-                    setStyle("item p-4 mt-0 fs-5");
-                    setIsClicked(true);
-                  } else {
-                    setStyle("item-0 p-4 mt-0 fs-5");
-                    setIsClicked(false);
-                  }
-                }}
-              >
-                {`${ability.ability.name}      `}{" "}
-              </p>
-            </div>
-          );
-        })}
+      <div>
+        <p
+          key={props.index}
+          className={style}
+          onClick={() => {
+            setUrl(props.ability.url);
+            if (isClicked === false) {
+              setStyle("item-0 p-4 mt-0 fs-5");
+              setIsClicked(true);
+              setRoute("explain");
+            } else {
+              setStyle("item p-4 mt-0 fs-5");
+              setIsClicked(false);
+              setRoute("");
+            }
+          }}
+        >
+          {`${props.ability.name}      `}{" "}
+        </p>
         <div className="fs-5">
           {route === "explain" ? <span>{explain}</span> : <div> {}</div>}
         </div>
