@@ -47,11 +47,11 @@ export default function Abilities(props) {
                 className={style}
                 onClick={() => {
                   setUrl(ability.ability.url);
-                  if (setIsClicked(false)) {
+                  if (isClicked === false) {
                     setStyle("item p-4 mt-0 fs-5");
                     setIsClicked(true);
                   } else {
-                    setStyle("text-underline fs-5");
+                    setStyle("item-0 p-4 mt-0 fs-5");
                     setIsClicked(false);
                   }
                 }}

@@ -20,7 +20,6 @@ export default function InfoPlus(props) {
                 version = ability.version.url.split("").slice(-3, -1).join("");
                 if ((version.charAt(0) === "/") | (parseInt(version) < 15)) {
                   newItem = ability.flavor_text;
-                  console.log(version);
                 } else {
                   return null;
                 }
