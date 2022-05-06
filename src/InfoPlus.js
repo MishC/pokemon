@@ -2,9 +2,8 @@ import React from "react";
 import "./styles/InfoPlus.css";
 
 export default function InfoPlus(props) {
-  let version = "";
   let newItem = "";
-
+  let arrayItem = [];
   if (props.abilities) {
     return (
       <div className="InfoPlus bg-white w-80 pt-1 mt-0 mb-5 pb-5 border border-secondary">
@@ -13,16 +12,19 @@ export default function InfoPlus(props) {
         <div className="container">
           <div className="row">
             {props.abilities.map((ability, index) => {
+              //console.log(arrayItem);
               if (
                 ability.language.name === "en" &&
-                newItem !== ability.flavor_text
+                newItem.slice(0, 6).toLowerCase() !==
+                  ability.flavor_text.slice(0, 6).toLowerCase() &&
+                !arrayItem.includes(
+                  ability.flavor_text.trim().slice(0, 6).toLowerCase()
+                )
               ) {
-                version = ability.version.url.split("").slice(-3, -1).join("");
-                if ((version.charAt(0) === "/") | (parseInt(version) < 15)) {
-                  newItem = ability.flavor_text;
-                } else {
-                  return null;
-                }
+                newItem = ability.flavor_text
+                  .replace(/\f/g, "")
+                  .replace(/\n/g, "");
+                arrayItem.push(newItem.trim().slice(0, 6).toLowerCase());
 
                 return (
                   <div
