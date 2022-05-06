@@ -32,7 +32,7 @@ export default function Abilities(props) {
   if (props.ability) {
     return (
       <div>
-        <p
+        <h4
           key={props.index}
           className={style}
           onClick={() => {
@@ -49,7 +49,7 @@ export default function Abilities(props) {
           }}
         >
           {`${props.ability.name}      `}{" "}
-        </p>
+        </h4>
         <div className="fs-5">
           {route === "explain" ? <span>{explain}</span> : <div> {}</div>}
         </div>
