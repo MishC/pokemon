@@ -16,15 +16,15 @@ export default function InfoPlus(props) {
               if (
                 ability.language.name === "en" &&
                 newItem.slice(0, 6).toLowerCase() !==
-                  ability.flavor_text.slice(0, 6).toLowerCase() &&
+                  ability.flavor_text.slice(-6).toLowerCase() &&
                 !arrayItem.includes(
-                  ability.flavor_text.trim().slice(0, 6).toLowerCase()
+                  ability.flavor_text.trim().slice(-6).toLowerCase()
                 )
               ) {
                 newItem = ability.flavor_text
                   .replace(/\f/g, "")
                   .replace(/\n/g, "");
-                arrayItem.push(newItem.trim().slice(0, 6).toLowerCase());
+                arrayItem.push(newItem.trim().slice(-6).toLowerCase());
 
                 return (
                   <div
