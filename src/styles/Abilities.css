@@ -11,6 +11,7 @@
 }
 
 .item-0 {
+  display: inline-flex;
   text-decoration: underline;
   background: #eee;
   color: #0d6efd;
