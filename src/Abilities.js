@@ -31,7 +31,7 @@ export default function Abilities(props) {
 
   if (props.ability) {
     return (
-      <div>
+      <div className="pe-auto">
         <h4
           key={props.index}
           className={style}
@@ -50,8 +50,12 @@ export default function Abilities(props) {
         >
           {`${props.ability.name}      `}{" "}
         </h4>
-        <div className="fs-5">
-          {route === "explain" ? <span>{explain}</span> : <div> {}</div>}
+        <div className="fs-5 pe-none">
+          {route === "explain" ? (
+            <span className="pe-none">{explain}</span>
+          ) : (
+            <div> {}</div>
+          )}
         </div>
       </div>
     );

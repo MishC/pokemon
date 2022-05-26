@@ -1,17 +1,17 @@
 .Abilities {
-  cursor: pointer;
   text-align: center;
 }
 
 /* On mouse-over */
 .item:hover,
 .item:active {
+  display: inline-flex;
+
   background: #eee;
   color: #0d6efd;
 }
 
 .item-0 {
-  display: inline-flex;
   text-decoration: underline;
   background: #eee;
   color: #0d6efd;
@@ -20,4 +20,7 @@
 .Abilities h2 {
   text-align: left;
   margin-left: 2em;
+}
+.Abilities h4 {
+  cursor: pointer;
 }
